@@ -18,6 +18,8 @@ public class Crate : MonoBehaviour
     }
     public void Attatch(Transform transform) {
         if (canAttatch) {
+            canAttatch = false;
+            FindObjectOfType<AudioManager>().Play("Crate");
             targetTransform = transform;
             isAttatched = true;
         }

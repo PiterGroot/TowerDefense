@@ -9,6 +9,7 @@ TagManager:
   - Crate
   - Turret
   - AOW
+  - GoldMine
   layers:
   - Default
   - TransparentFX

@@ -21,3 +21,6 @@ Socket for plug by Poly by Google [CC-BY], via Poly Pizza
 
 Pickaxe:
 Simple Pickaxe by Garrett LeFever [CC-BY], via Poly Pizza
+
+Enemy model: 
+BlockMan by Robert Mark [CC-BY], via Poly Pizza

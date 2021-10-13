@@ -8,7 +8,7 @@ public class Wallet : MonoBehaviour
 {
     [SerializeField] private bool devmode;
     [SerializeField]public float currentBalance;
-    [SerializeField]private TextMeshProUGUI BalanceUI;
+    [SerializeField]private TextMeshProUGUI BalanceUI, BalanceShadowUI;
     [SerializeField]private bool sendAlerts;
     private void Awake() {
         ResetMoney(true);
@@ -30,6 +30,7 @@ public class Wallet : MonoBehaviour
         if(currentBalance >= 0){
             PlayerPrefs.SetFloat("Wallet", currentBalance);
             BalanceUI.text = PlayerPrefs.GetFloat("Wallet").ToString();
+            BalanceShadowUI.text = PlayerPrefs.GetFloat("Wallet").ToString();
             if(sendAlerts){
                 print($"Wallet updated, balance: {currentBalance}");
             }
@@ -52,7 +53,7 @@ public class Wallet : MonoBehaviour
     private void Update() {
         if (devmode) {
             if (Input.GetKey(KeyCode.Space)) {
-                if (Input.GetKeyDown(KeyCode.E)) {
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKey(KeyCode.E)) {
                     AddMoney(100);
                 }
             }

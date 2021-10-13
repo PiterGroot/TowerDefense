@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    public int Kills;
     private bool canSelect;
     [HideInInspector]public bool isSelected;
     private float shootRate = 0.2f;

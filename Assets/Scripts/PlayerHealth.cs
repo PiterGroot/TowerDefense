@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]private float StartHealth = 200;   
     [SerializeField]private float currentHealth;
-    [SerializeField]private TextMeshProUGUI BalanceUI;
+    [SerializeField]private TextMeshProUGUI HealthUI, HealthShadowUI;
     [SerializeField]private bool sendAlerts;
     private void Awake() {
         SetHealth(StartHealth);
@@ -29,7 +29,8 @@ public class PlayerHealth : MonoBehaviour
     private void RefreshHealth(){
         if(currentHealth > 0){
             PlayerPrefs.SetFloat("Health", currentHealth);
-            BalanceUI.text = PlayerPrefs.GetFloat("Health").ToString();
+            HealthUI.text = PlayerPrefs.GetFloat("Health").ToString();
+            HealthShadowUI.text = PlayerPrefs.GetFloat("Health").ToString();
             if(sendAlerts){
                 print($"Health updated, Health: {currentHealth}");
             }
