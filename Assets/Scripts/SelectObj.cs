@@ -6,7 +6,7 @@ using TMPro;
 
 public class SelectObj : MonoBehaviour
 {
-    public GameObject CurrentState;
+    [HideInInspector]public GameObject CurrentState;
     [HideInInspector] public int State;
     private bool UpgradeUI;
     [SerializeField]private LayerMask layerMask;

@@ -749,16 +749,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSpawn: 0
   Waves:
-  - EnemiesAmount: 10
-    Enemy: {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
-  - EnemiesAmount: 15
-    Enemy: {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
-  - EnemiesAmount: 20
-    Enemy: {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
-  - EnemiesAmount: 25
-    Enemy: {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
-  - EnemiesAmount: 30
-    Enemy: {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
+  - EnemiesAmount: 5
+    Enemy:
+    - {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
+    - {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
+    - {fileID: 4949122725478706188, guid: ba46821eae8fdde4a814eead8c036bcd, type: 3}
+  - EnemiesAmount: 0
+    Enemy: []
+  - EnemiesAmount: 0
+    Enemy: []
+  - EnemiesAmount: 0
+    Enemy: []
+  - EnemiesAmount: 0
+    Enemy: []
   CurrentWave: 0
   SpawnTimer: 2
   TimeBetweenWaves: 10
@@ -9133,7 +9136,7 @@ MonoBehaviour:
   - {fileID: 1888122853583363094, guid: 46441aedf8a3c1541a230d21577b7cf9, type: 3}
   - {fileID: 362638772}
   - {fileID: 945007367}
-  Prices: c8000000f4010000ee020000
+  Prices: c8000000e8030000ee020000
   PriceSigns:
   - {fileID: 724230947}
   - {fileID: 1990087456}

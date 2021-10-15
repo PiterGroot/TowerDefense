@@ -10,7 +10,7 @@ public class Building : MonoBehaviour
     private bool isGreen;
     private bool isRed;
     private RaycastHit hit;
-    [HideInInspector]public bool canBuild;
+    public bool canBuild;
     [SerializeField]public LayerMask ignoredLayer;
     [SerializeField] private Camera mainCamera;
     [SerializeField]private GameObject CurrentTower, ShadowTowerGreen, ShadowTowerRed;
@@ -61,7 +61,7 @@ public class Building : MonoBehaviour
                                         selectOBJ.canSelect = true;
                                     }
                                 break;
-                                case 500:
+                                case 1000:
                                     if(FindObjectOfType<Wallet>().currentBalance >= Prices[1]){
                                         FindObjectOfType<Wallet>().RemoveMoney(Prices[1]);
                                         Instantiate(CurrentTower, hit.point, Quaternion.identity);

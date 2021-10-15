@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2522800473539941042}
   - component: {fileID: 8552146823233633731}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a4474fdb14aca3498371c1daa2dc71d, type: 2}
+  - {fileID: 2100000, guid: 4fd46a691b037d842a36c18f17c9dbc1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   red: {fileID: 2100000, guid: 8a4474fdb14aca3498371c1daa2dc71d, type: 2}
   white: {fileID: 2100000, guid: 9e854de6640164a4ca704a570d400972, type: 2}
-  Health_: 50
+  Health_: 2
 --- !u!114 &2522800473539941042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AOWDamage: 0
+  AOWDamageAmount: 3
   Waypoints: []
   moveSpeed: 7
   moveSpeed1: 100

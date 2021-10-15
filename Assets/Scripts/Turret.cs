@@ -60,10 +60,6 @@ public class Turret : MonoBehaviour
             lookOnLook.x = 0;
             lookOnLook.z = 0;
             transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, moveSpeed * Time.deltaTime);
-
-            //Mathf.Lerp(transform.rotation.y, TargetPos.y, moveSpeed * Time.deltaTime);
-            // var targetRotation = Quaternion.LookRotation(Target.position - transform.position);
-            // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
         }
     }
     private void EnableSelect(){

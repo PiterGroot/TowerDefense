@@ -6,7 +6,7 @@ using UnityEngine;
 public class Wave
 {
     public int EnemiesAmount;
-    public GameObject Enemy;
+    public GameObject[] Enemy;
 }
 public class EnemySpawner : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
         if(CurrentWave < Waves.Length) {
             print($"Spawning wave: {CurrentWave}");
             for (int i = 0; i < Waves[CurrentWave].EnemiesAmount; i++) {
-                Instantiate(Waves[CurrentWave].Enemy, SpawnPos, Quaternion.identity);
+                Instantiate(Waves[CurrentWave].Enemy[Random.Range(0, Waves[CurrentWave].Enemy.Length)], SpawnPos, Quaternion.identity);
                 yield return new WaitForSeconds(SpawnTimer);
             }
             yield return new WaitForSeconds(TimeBetweenWaves);

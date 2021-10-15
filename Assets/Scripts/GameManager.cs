@@ -17,11 +17,13 @@ public class GameManager : MonoBehaviour
     private void Start() {
         buildingScript = GetComponent<Building>();
         Towermode = true;
+        InvokeRepeating("disableCanbuild", 1f, 1f);
     }
-
+    
     public void ToggleDroneMode(){
         isDroneMode = !isDroneMode;
         if(isDroneMode){
+            Cursor.visible = false;
             Towermode = false;
             BuildingUI();
             buildingScript.canBuild = false;
@@ -60,7 +62,12 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<TurretBar>().barAnim.SetTrigger("Disappear");
         }
     }
-
+    private void disableCanbuild() {
+        //every second
+        if (isDroneMode) {
+            buildingScript.canBuild = false;
+        }
+    }
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Tab)){
             ToggleDroneMode();

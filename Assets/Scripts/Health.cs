@@ -6,11 +6,12 @@ public class Health : MonoBehaviour
 {
     private bool blink;
     private Renderer rendererMat;
-    [SerializeField] private Material red;
+    [SerializeField] private Material startMaterial;
     [SerializeField] private Material white;
     [SerializeField] private int Health_;
     private void Awake() {
         rendererMat = GetComponent<Renderer>();
+        startMaterial = rendererMat.material;
     }
     public void TakeDamage(int amount) {
 
@@ -20,7 +21,7 @@ public class Health : MonoBehaviour
     private IEnumerator Blink() {
         rendererMat.material = white;
         yield return new WaitForSeconds(.1f);
-        rendererMat.material = red;
+        rendererMat.material = startMaterial;
     }
     private void Update() {
         if(Health_ <= 0) {

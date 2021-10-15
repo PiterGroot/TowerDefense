@@ -233,4 +233,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb106bd9fa7b72f4cba74bbef22aba8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageAmount: 1
   DieTimer: 0.3

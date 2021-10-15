@@ -7,6 +7,7 @@ public class Pathfinding : MonoBehaviour
     private Tower AOWSettings;
     private bool CanMove;
     public bool AOWDamage;
+    public int AOWDamageAmount;
     [SerializeField] List<Transform> Waypoints = new List<Transform>();
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveSpeed1;
@@ -70,7 +71,7 @@ public class Pathfinding : MonoBehaviour
     }
     public void TakeDamage() {
         if(AOWDamage){
-            GetComponent<Health>().TakeDamage(3);
+            GetComponent<Health>().TakeDamage(AOWDamageAmount);
         }
     }
 
