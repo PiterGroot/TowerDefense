@@ -16,9 +16,11 @@ public class Rope : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision) {
         if(collision.collider.CompareTag("Crate")) {
-            collision.collider.GetComponent<Crate>().Attatch(anchorPoint);
-            isEmpty = false;
-            isGrappled = true;
+            if (!isGrappled) {
+                collision.collider.GetComponent<Crate>().Attatch(anchorPoint);
+                isEmpty = false;
+                isGrappled = true;
+            }
         }
     }
     private void Update() {

@@ -5113,20 +5113,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.80739135, y: 3.092735, z: 0.8608875}
   m_Center: {x: -0.62, y: 1.401368, z: -1.8695563}
---- !u!114 &855503368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855503365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0455939b6176413499b5e5a5d4afc3b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compassIcon: {fileID: 21300000, guid: 897baece8bd4fd346a2c897395f55cd4, type: 3}
-  image: {fileID: 0}
 --- !u!1 &860359764
 GameObject:
   m_ObjectHideFlags: 0
@@ -9197,7 +9183,7 @@ MonoBehaviour:
   - {fileID: 1070943887}
   - {fileID: 784368470}
   - {fileID: 999031046}
-  Tower: {fileID: 855503368}
+  Tower: {fileID: 1721352575}
 --- !u!114 &1522476086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10045,6 +10031,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710028023}
   m_CullTransparentMesh: 1
+--- !u!1 &1721352571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 9c102268f7304b841b24f42defde4131, type: 3}
+  m_PrefabInstance: {fileID: 256876912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721352575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721352571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0455939b6176413499b5e5a5d4afc3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compassIcon: {fileID: 21300000, guid: 897baece8bd4fd346a2c897395f55cd4, type: 3}
+  image: {fileID: 0}
 --- !u!1 &1808576328
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class SelectObj : MonoBehaviour
     private bool UpgradeUI;
     [SerializeField]private LayerMask layerMask;
     private bool hasSelectedObj;
-    [HideInInspector]public bool canSelect;
+    public bool canSelect;
     [SerializeField]private Camera mainCamera;
     [SerializeField] private Animator UpgradeAnim;
     [Header("UI refrences")]
@@ -44,7 +44,6 @@ public class SelectObj : MonoBehaviour
                 }
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
                 if(Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, ~layerMask)) {
-                    print(raycastHit.collider.gameObject.name);
                     if(raycastHit.collider.gameObject.CompareTag("Turret")){
                         State = 0;
                         raycastHit.collider.gameObject.GetComponent<Turret>().SelectTurret();

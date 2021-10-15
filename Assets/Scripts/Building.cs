@@ -5,6 +5,7 @@ using TMPro;
 
 public class Building : MonoBehaviour
 {
+    private GameManager gm;
     private SelectObj selectOBJ;
     private int CurrentPrice;
     private bool isGreen;
@@ -21,6 +22,7 @@ public class Building : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] ShadowPriceSigns;
 
     private void Awake() {
+        gm = gameObject.GetComponent<GameManager>();
         selectOBJ = gameObject.GetComponent<SelectObj>();
         for (int i = 0; i < PriceSigns.Length; i++) {
             PriceSigns[i].text = Prices[i].ToString();
@@ -101,7 +103,9 @@ public class Building : MonoBehaviour
         else{
             ShadowTowerGreen.SetActive(false);
             ShadowTowerRed.SetActive(false);
-            selectOBJ.canSelect = true;
+            if (gm.Towermode == true) {
+                selectOBJ.canSelect = true;
+            }
         }
     }
     public void SwitchToTurret() {
