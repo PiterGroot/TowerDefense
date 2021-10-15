@@ -754,17 +754,22 @@ MonoBehaviour:
     - {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
     - {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
     - {fileID: 4949122725478706188, guid: ba46821eae8fdde4a814eead8c036bcd, type: 3}
-  - EnemiesAmount: 0
-    Enemy: []
-  - EnemiesAmount: 0
-    Enemy: []
-  - EnemiesAmount: 0
-    Enemy: []
-  - EnemiesAmount: 0
-    Enemy: []
+  - EnemiesAmount: 10
+    Enemy:
+    - {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
+    - {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
+    - {fileID: 4949122725478706188, guid: ba46821eae8fdde4a814eead8c036bcd, type: 3}
+  - EnemiesAmount: 15
+    Enemy:
+    - {fileID: 4949122725478706188, guid: ba46821eae8fdde4a814eead8c036bcd, type: 3}
+    - {fileID: 4949122725478706188, guid: ba46821eae8fdde4a814eead8c036bcd, type: 3}
+    - {fileID: 4949122725478706188, guid: c3e75f0325dc23b4e8b9e7aea32ab8de, type: 3}
+  - EnemiesAmount: 20
+    Enemy:
+    - {fileID: 4949122725478706188, guid: ba46821eae8fdde4a814eead8c036bcd, type: 3}
   CurrentWave: 0
   SpawnTimer: 2
-  TimeBetweenWaves: 10
+  TimeBetweenWaves: 5
   SpawnPos: {x: -56.1, y: 1.137772, z: 17.3}
 --- !u!4 &145406857 stripped
 Transform:

@@ -5,19 +5,16 @@ using UnityEngine;
 public class AOWTurret : MonoBehaviour
 {
     private bool canSelect;
-    [HideInInspector] public bool isSelected;
     private float shootRate = 0.2f;
-    private Transform Target;
-    private float moveSpeed = 4f;
-    [SerializeField] private float range = 15f;
     private string enemyTag = "Enemy";
+    [HideInInspector] public bool isSelected;
+    [SerializeField] private float range = 15f;
     [SerializeField] public Tower TowerObj;
     
     // Start is called before the first frame update
     private void Start() {
         Invoke("EnableSelect", 1f);
         shootRate = TowerObj.shootRate;
-        moveSpeed = TowerObj.moveSpeed;
         enemyTag = TowerObj.enemyTag;
         InvokeRepeating("UpdateTarget", 0f, shootRate);
     }
@@ -26,7 +23,7 @@ public class AOWTurret : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
         foreach (Collider obj in hitColliders)
         {
-            if(obj.gameObject.CompareTag("Enemy")){
+            if(obj.gameObject.CompareTag(enemyTag)){
                 if(obj.GetComponent<Pathfinding>().AOWDamage){
                     obj.GetComponent<Pathfinding>().TakeDamage();
                 }

@@ -8,14 +8,18 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public float timer = 0.3f;
     public float bulletForce = 20f;
+    private Transform target;
     
-    public void Shoot(){
+    public void Shoot(Transform target){
+        this.target = target;
         Invoke("Commit", timer);
     }
 
     public void Commit(){
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.forward * bulletForce, ForceMode.VelocityChange);
+        if(target != null) {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.AddForce(firePoint.forward * bulletForce, ForceMode.VelocityChange);
+        }
     }
 }

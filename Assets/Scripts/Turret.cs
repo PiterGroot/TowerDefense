@@ -16,7 +16,7 @@ public class Turret : MonoBehaviour
     public Transform partToRotate;
     // Start is called before the first frame update
     private void Start(){
-         Invoke("EnableSelect", 1f);
+        Invoke("EnableSelect", 1f);
         shootRate = TowerObj.shootRate;
         moveSpeed = TowerObj.moveSpeed;
         enemyTag = TowerObj.enemyTag;
@@ -38,7 +38,7 @@ public class Turret : MonoBehaviour
         }
         if (nearestEnemy != null && shortestDistance <= range){
             Target = nearestEnemy.transform;
-            gameObject.GetComponent<Shooting>().Shoot();
+            gameObject.GetComponent<Shooting>().Shoot(Target);
         }else{
             Target = null;
         }

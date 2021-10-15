@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ae08ecfcee298419e0f6ea03b63719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Kills: 0
   isSelected: 0
   range: 21.89
   TowerObj: {fileID: 11400000, guid: 7d4749dbcee91544f88213c20f111b3b, type: 2}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TowerTypes: 0
   shootRate: 0.4
-  moveSpeed: 20
+  moveSpeed: 30
   enemyTag: Enemy
