@@ -17,7 +17,7 @@ public class Building : MonoBehaviour
     [SerializeField]private GameObject CurrentTower, ShadowTowerGreen, ShadowTowerRed;
     [SerializeField] private GameObject[] Turrets;
     [Header("Buying")]
-    [SerializeField] private int[] Prices;
+    public int[] Prices;
     [SerializeField] private TextMeshProUGUI[] PriceSigns;
     [SerializeField] private TextMeshProUGUI[] ShadowPriceSigns;
 

@@ -49,6 +49,7 @@ public class SelectObj : MonoBehaviour
                         raycastHit.collider.gameObject.GetComponent<Turret>().SelectTurret();
                         SetUpUI(raycastHit.collider.gameObject, 0);
                         UpgradeAnim.SetTrigger("Appear");
+                        FindObjectOfType<UpgradeUILogic>().EnableUI();
                         UpgradeUI = true;
                         hasSelectedObj = true;
                     }
@@ -57,6 +58,7 @@ public class SelectObj : MonoBehaviour
                         raycastHit.collider.gameObject.GetComponentInParent<AOWTurret>().SelectTurret();
                         SetUpUI(raycastHit.collider.gameObject, 1);
                         UpgradeAnim.SetTrigger("Appear");
+                        FindObjectOfType<UpgradeUILogic>().EnableUI();
                         UpgradeUI = true;
                         hasSelectedObj = true;
                     }
@@ -65,6 +67,7 @@ public class SelectObj : MonoBehaviour
                         raycastHit.collider.gameObject.GetComponent<GoldMine>().SelectTurret();
                         SetUpUI(raycastHit.collider.gameObject, 2);
                         UpgradeAnim.SetTrigger("Appear");
+                        FindObjectOfType<UpgradeUILogic>().EnableUI();
                         UpgradeUI = true;
                         hasSelectedObj = true;
                     }

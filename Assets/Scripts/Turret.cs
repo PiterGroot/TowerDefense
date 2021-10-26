@@ -7,13 +7,15 @@ public class Turret : MonoBehaviour
     public int Kills;
     private bool canSelect;
     [HideInInspector]public bool isSelected;
-    private float shootRate = 0.2f;
+    [HideInInspector]public float shootRate = 0.2f;
     private Transform Target;
     private float moveSpeed = 4f;
     [SerializeField]private float range = 15f;
     private string enemyTag = "Enemy";
     [SerializeField] private Tower TowerObj;
     public Transform partToRotate;
+    [SerializeField]public int damageAmount;
+    [SerializeField] private GameObject Scope;
     // Start is called before the first frame update
     private void Start(){
         Invoke("EnableSelect", 1f);
@@ -21,6 +23,7 @@ public class Turret : MonoBehaviour
         moveSpeed = TowerObj.moveSpeed;
         enemyTag = TowerObj.enemyTag;
         InvokeRepeating("UpdateTarget", 0f, shootRate);
+        Scope = transform.GetChild(2).transform.GetChild(2).gameObject;
     }
     
     private void UpdateTarget(){
@@ -38,7 +41,7 @@ public class Turret : MonoBehaviour
         }
         if (nearestEnemy != null && shortestDistance <= range){
             Target = nearestEnemy.transform;
-            gameObject.GetComponent<Shooting>().Shoot(Target);
+            gameObject.GetComponent<Shooting>().Shoot(Target, damageAmount);
         }else{
             Target = null;
         }
@@ -79,5 +82,8 @@ public class Turret : MonoBehaviour
                 transform.GetChild(1).gameObject.SetActive(false);
             }
         }
+    }
+    public void EnableScope() {
+        Scope.SetActive(true);
     }
 }

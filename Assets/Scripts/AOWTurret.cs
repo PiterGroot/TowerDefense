@@ -7,6 +7,7 @@ public class AOWTurret : MonoBehaviour
     private bool canSelect;
     private float shootRate = 0.2f;
     private string enemyTag = "Enemy";
+    public float damageAmount;
     [HideInInspector] public bool isSelected;
     [SerializeField] private float range = 15f;
     [SerializeField] public Tower TowerObj;

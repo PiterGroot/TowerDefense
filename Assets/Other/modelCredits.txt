@@ -24,3 +24,6 @@ Simple Pickaxe by Garrett LeFever [CC-BY], via Poly Pizza
 
 Enemy model: 
 BlockMan by Robert Mark [CC-BY], via Poly Pizza
+
+Scope model:
+Scope by Quaternius [CC0], via Poly Pizza
