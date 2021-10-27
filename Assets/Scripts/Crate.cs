@@ -31,7 +31,7 @@ public class Crate : MonoBehaviour
         canAttatch = false;
         isAttatched = false;
         rb.velocity = new Vector3(0, -30, 0);
-        Invoke("CanAttach", 3f);
+        Invoke("CanAttach", .75f);
     }
     private void DetachingUI(){
         FindObjectOfType<Rope>().isEmpty = true;
@@ -40,6 +40,7 @@ public class Crate : MonoBehaviour
     }
     private void CanAttach() {
         canAttatch = true;
+        FindObjectOfType<Rope>().isDetaching = false;
     }
 
     private void OnCollisionEnter(Collision collision) {

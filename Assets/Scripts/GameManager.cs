@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private Transform Rotationpoint;
     [SerializeField]private Camera mainCam, droneCam;
     [SerializeField]private GameObject DronePrefab;
+    [SerializeField] private DOFFocusOnObject depthScript;
     private void Start() {
         buildingScript = GetComponent<Building>();
         Towermode = true;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
             GetComponent<SelectObj>().DeselectAll();
             GetComponent<SelectObj>().canSelect = false;
             DronePrefab.GetComponent<DroneController>().canControl = true;
+            depthScript.enabled = true;
         }
         else{
             if(FindObjectOfType<Rope>().isGrappled){
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
             droneCam.gameObject.SetActive(false);
             GetComponent<SelectObj>().canSelect = true;
             FindObjectOfType<TurretBar>().canToggleUI = true;
+            depthScript.enabled = false;
         }
     }
 

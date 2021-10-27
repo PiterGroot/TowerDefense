@@ -16,7 +16,6 @@ public class GoldMine : MonoBehaviour
             Invoke("MineGold", Random.Range(5, 11));
         }
     }
-
     private void MineGold(){
         FindObjectOfType<Wallet>().AddMoney(25);
         RandomInvoke();

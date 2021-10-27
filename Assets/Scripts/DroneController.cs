@@ -5,17 +5,20 @@ using UnityEngine;
 public class DroneController : MonoBehaviour
 {   
     [HideInInspector]public bool canControl;
+    [HideInInspector] public bool isBoosting;
     private bool hover;
     private float rollInput;
     private float startSpeed;
-    [SerializeField]private float moveSpeed = 25;
     private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
     private float forwardAcceleration = 2.5f, strafeAcceleration = 2f, hoverAcceleration = 2f;
+    [SerializeField] private bool isMoving;
+    [SerializeField]private float moveSpeed = 25;
     [SerializeField]private float lookRateSpeed = 90f;
-    [SerializeField]private float rollSpeed = 90f, rollAcceleration = 3.5f;
+    [SerializeField] private float rollSpeed = 90f, lookSmoothing = 0f, rollAcceleration = 3.5f;
     [SerializeField]private Vector2 lookInput, screenCenter, mouseDist;
     [SerializeField]private bool Controller;
     [SerializeField] private GameObject HoverUI;
+    [SerializeField] private ParticleSystem boostParticle;
 
     private void Awake() {
         startSpeed = moveSpeed;
@@ -31,13 +34,16 @@ public class DroneController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse1)) {
             //boost
+            isBoosting = true;
             moveSpeed = 75;
         }
         if (Input.GetKeyUp(KeyCode.Mouse1)) {
             //reset boost
+            isBoosting = false;
             moveSpeed = startSpeed;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            //if dronemode, cursur must be invisible
             Cursor.visible = false;     
         }
         if(canControl){
@@ -63,7 +69,7 @@ public class DroneController : MonoBehaviour
                     activeHoverSpeed = Mathf.Lerp(activeHoverSpeed, Input.GetAxisRaw("HoverController") * moveSpeed, hoverAcceleration * Time.deltaTime);
                 }else{
                     rollInput = Mathf.Lerp(rollInput, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
-                    transform.Rotate(-mouseDist.y * lookRateSpeed * Time.deltaTime, mouseDist.x * lookRateSpeed * Time.deltaTime, rollInput * rollSpeed * Time.deltaTime, Space.Self);
+                    transform.Rotate(-mouseDist.y * lookRateSpeed * Time.deltaTime, mouseDist.x * lookRateSpeed * Time.deltaTime, rollInput * lookSmoothing * Time.deltaTime, Space.Self);
                     activeHoverSpeed = Mathf.Lerp(activeHoverSpeed, Input.GetAxisRaw("Hover") * moveSpeed, hoverAcceleration * Time.deltaTime);
                 }
                 activeForwardSpeed = Mathf.Lerp(activeForwardSpeed, Input.GetAxisRaw("Vertical") * moveSpeed, forwardAcceleration * Time.deltaTime);
@@ -72,6 +78,18 @@ public class DroneController : MonoBehaviour
                 transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
                 transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
             }
+        }
+        if (Input.GetAxisRaw("Vertical") > 0) {
+            isMoving = true;
+        }
+        else {
+            isMoving = false;
+        }
+        if (isMoving && isBoosting) {
+            boostParticle.gameObject.SetActive(true);
+        }
+        else {
+            boostParticle.gameObject.SetActive(false);
         }
     }
 }

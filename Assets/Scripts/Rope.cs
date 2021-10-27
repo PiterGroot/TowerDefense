@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Rope : MonoBehaviour
 {   
-    [HideInInspector]public bool isEmpty;
-    [HideInInspector]public bool isGrappled;
-    [HideInInspector]public bool isDetaching;
+    public bool isEmpty;
+    public bool isGrappled;
+    public bool isDetaching;
     [SerializeField] private Transform anchorPoint;
     [SerializeField]private GameObject grappled, detaching, empty;
     private void Start() {
@@ -19,6 +19,7 @@ public class Rope : MonoBehaviour
             if (!isGrappled) {
                 collision.collider.GetComponent<Crate>().Attatch(anchorPoint);
                 isEmpty = false;
+                isDetaching = false;
                 isGrappled = true;
             }
         }
