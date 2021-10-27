@@ -39,7 +39,6 @@ public class SelectObj : MonoBehaviour
                     {
                         turret.GetComponent<Turret>().DisableSelect();
                     }
-                    //UpgradeAnim.SetTrigger("Disappear");
                     hasSelectedObj = false;
                 }
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -74,6 +73,7 @@ public class SelectObj : MonoBehaviour
                     else {
                         if (UpgradeUI) {
                             UpgradeAnim.SetTrigger("Disappear");
+                            FindObjectOfType<UpgradeUILogic>().isActive = false;
                             UpgradeUI = false;
                         }
                     }
@@ -88,6 +88,7 @@ public class SelectObj : MonoBehaviour
         }
         if (UpgradeUI) {
             UpgradeAnim.SetTrigger("Disappear");
+            FindObjectOfType<UpgradeUILogic>().isActive = false;
             UpgradeUI = false;
         }
     }

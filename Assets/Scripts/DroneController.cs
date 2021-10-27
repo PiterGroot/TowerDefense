@@ -79,13 +79,13 @@ public class DroneController : MonoBehaviour
                 transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
             }
         }
-        if (Input.GetAxisRaw("Vertical") > 0) {
+        if (Input.GetAxisRaw("Vertical") > 0 || Input.GetAxisRaw("Horizontal") != 0) {
             isMoving = true;
         }
         else {
             isMoving = false;
         }
-        if (isMoving && isBoosting) {
+        if (isMoving && isBoosting && !hover) {
             boostParticle.gameObject.SetActive(true);
         }
         else {

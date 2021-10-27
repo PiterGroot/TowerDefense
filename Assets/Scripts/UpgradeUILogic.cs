@@ -6,11 +6,13 @@ using TMPro;
 
 public class UpgradeUILogic : MonoBehaviour
 {
+    [HideInInspector] public bool isActive;
     [SerializeField]private SelectObj selectObj;
     [SerializeField] private Building buildingScript;
     [SerializeField] private Button damageButton, fireButton;
     [SerializeField]private TextMeshProUGUI Kills, KillsShadow;
     public void EnableUI() {
+        isActive = true;
         if (selectObj.CurrentState.GetComponent<Upgrades>().hasDamage) {
             damageButton.interactable = false;
         }
@@ -28,17 +30,6 @@ public class UpgradeUILogic : MonoBehaviour
         }
         if(FindObjectOfType<Wallet>().currentBalance < selectObj.CurrentState.GetComponent<Upgrades>().fireRatePrice){
             fireButton.interactable = false;
-        }
-        switch(selectObj.State){
-            case 0:
-                //turret
-                Kills.text = selectObj.CurrentState.GetComponent<Turret>().Kills.ToString();
-                KillsShadow.text = selectObj.CurrentState.GetComponent<Turret>().Kills.ToString();
-            break;
-            case 1:
-            break;
-            case 2:
-            break;
         }
     }
     public void SellCurentTower() {
@@ -80,6 +71,21 @@ public class UpgradeUILogic : MonoBehaviour
                 selectObj.CurrentState.GetComponent<Upgrades>().BuyFireRate();
                 fireButton.interactable = false;
                 PlaySound("Coin");
+            }
+        }
+    }
+    private void Update() {
+        if (isActive) {
+            switch (selectObj.State) {
+                case 0:
+                    //turret
+                    Kills.text = selectObj.CurrentState.GetComponent<Turret>().Kills.ToString();
+                    KillsShadow.text = selectObj.CurrentState.GetComponent<Turret>().Kills.ToString();
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
             }
         }
     }

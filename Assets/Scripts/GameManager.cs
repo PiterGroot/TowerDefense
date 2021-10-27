@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
         if(FindObjectOfType<TurretBar>().barState){
             FindObjectOfType<TurretBar>().barState = false;
             FindObjectOfType<TurretBar>().barAnim.SetTrigger("Disappear");
+            FindObjectOfType<UpgradeUILogic>().isActive = false;
         }
     }
     private void disableCanbuild() {
