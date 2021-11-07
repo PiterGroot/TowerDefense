@@ -17,7 +17,9 @@ public class GoldMine : MonoBehaviour
         }
     }
     private void MineGold(){
-        FindObjectOfType<Wallet>().AddMoney(25);
+        if(FindObjectOfType<EnemySpawner>().isSpawning){
+            FindObjectOfType<Wallet>().AddMoney(25);    
+        }
         RandomInvoke();
     }
     public void SelectTurret() {

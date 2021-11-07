@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private GameObject DronePrefab;
     [SerializeField] private DOFFocusOnObject depthScript;
     private void Start() {
+        Cursor.visible = true;
         buildingScript = GetComponent<Building>();
         Towermode = true;
         InvokeRepeating("disableCanbuild", 1f, 1f);
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     public void ToggleDroneMode(){
         isDroneMode = !isDroneMode;
         if(isDroneMode){
+            FindObjectOfType<AudioManager>().Play("Drone");
             Cursor.visible = false;
             Towermode = false;
             BuildingUI();
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+            FindObjectOfType<AudioManager>().Stop("Drone");
             Towermode = true;
             Cursor.visible = true;
             buildingScript.canBuild = false;

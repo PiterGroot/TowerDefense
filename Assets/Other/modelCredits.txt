@@ -27,3 +27,6 @@ BlockMan by Robert Mark [CC-BY], via Poly Pizza
 
 Scope model:
 Scope by Quaternius [CC0], via Poly Pizza
+
+Pole model:
+Telephone pole by Poly by Google [CC-BY], via Poly Pizza

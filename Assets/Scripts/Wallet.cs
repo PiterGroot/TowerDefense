@@ -12,6 +12,7 @@ public class Wallet : MonoBehaviour
     [SerializeField]private bool sendAlerts;
     private void Awake() {
         ResetMoney(true);
+        AddMoney(400);
     }
     
     public void RemoveMoney(float amount){

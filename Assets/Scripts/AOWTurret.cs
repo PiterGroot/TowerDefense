@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AOWTurret : MonoBehaviour
 {
+    [HideInInspector]public int Kills;
     private bool canSelect;
-    private float shootRate = 0.2f;
+    public float shootRate = 0.2f;
     private string enemyTag = "Enemy";
-    public float damageAmount;
+    public int damageAmount;
     [HideInInspector] public bool isSelected;
     [SerializeField] private float range = 15f;
     [SerializeField] public Tower TowerObj;
@@ -26,10 +27,13 @@ public class AOWTurret : MonoBehaviour
         {
             if(obj.gameObject.CompareTag(enemyTag)){
                 if(obj.GetComponent<Pathfinding>().AOWDamage){
-                    obj.GetComponent<Pathfinding>().TakeDamage();
+                    obj.GetComponent<Pathfinding>().TakeDamage(this, damageAmount);
                 }
             }
         }
+    }
+    public void AddKill(){
+        Kills++;
     }
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;

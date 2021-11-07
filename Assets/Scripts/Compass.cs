@@ -12,7 +12,8 @@ public class Compass : MonoBehaviour
     [SerializeField]private Transform drone;
     [SerializeField]private GameObject iconPrefab;
     [SerializeField]private GameObject iconPrefabBig;
-    [SerializeField]private CompassMarker[] markersToAdd;
+    [SerializeField]public CompassMarker[] markersToAdd;
+    public List<CompassMarker> marksertoAdd = new List<CompassMarker>();
     [SerializeField]private CompassMarker Tower;
 
     private void Start() {
@@ -25,10 +26,17 @@ public class Compass : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    {   for (int i = 0; i < markersToAdd.Length; i++)
+    {   
+        // for (int i = 0; i < markersToAdd.Length; i++)
+        // {
+        //     if(markersToAdd[i]==null){
+        //         markerImage.gameObject.transform.GetChild(i).GetComponent<Image>().enabled = false;
+        //     }
+        // }
+        foreach (CompassMarker marker in marksertoAdd)
         {
-            if(markersToAdd[i]==null){
-                markerImage.gameObject.transform.GetChild(i).GetComponent<Image>().enabled = false;
+            if(marker == null){
+                markerImage.gameObject.SetActive(false);
             }
         }
         if(!gameObject.GetComponent<GameManager>().Towermode){

@@ -35,7 +35,12 @@ public class DroneController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1)) {
             //boost
             isBoosting = true;
-            moveSpeed = 75;
+            if(PlayerPrefs.GetInt("DroneBoost") > 0) {
+                moveSpeed = PlayerPrefs.GetInt("DroneBoost");
+            }
+            else {
+                moveSpeed = 75;
+            }
         }
         if (Input.GetKeyUp(KeyCode.Mouse1)) {
             //reset boost

@@ -7,7 +7,6 @@ public class Pathfinding : MonoBehaviour
     private Tower AOWSettings;
     private bool CanMove;
     public bool AOWDamage;
-    public int AOWDamageAmount;
     [SerializeField] List<Transform> Waypoints = new List<Transform>();
     [SerializeField] private float moveSpeed;
     [SerializeField] private float moveSpeed1;
@@ -69,9 +68,12 @@ public class Pathfinding : MonoBehaviour
             AOWDamage = false;
         }
     }
-    public void TakeDamage() {
+    public void TakeDamage(AOWTurret parent, int damage) {
         if(AOWDamage){
-            GetComponent<Health>().TakeDamage(AOWDamageAmount);
+            GetComponent<Health>().TakeDamage(damage);
+            if(gameObject.GetComponent<Health>().Health_ <= 0){
+                parent.AddKill();
+            }
         }
     }
 

@@ -6,14 +6,14 @@ using TMPro;
 
 public class SelectObj : MonoBehaviour
 {
-    [HideInInspector]public GameObject CurrentState;
+    public GameObject CurrentState;
     [HideInInspector] public int State;
-    private bool UpgradeUI;
+    public bool UpgradeUI;
     [SerializeField]private LayerMask layerMask;
     private bool hasSelectedObj;
     public bool canSelect;
     [SerializeField]private Camera mainCamera;
-    [SerializeField] private Animator UpgradeAnim;
+    [SerializeField] public Animator UpgradeAnim;
     [Header("UI refrences")]
     [SerializeField] private TextMeshProUGUI Kills;
     [SerializeField] private TextMeshProUGUI killsShadow;
@@ -63,7 +63,7 @@ public class SelectObj : MonoBehaviour
                     }
                     else if (raycastHit.collider.gameObject.CompareTag("GoldMine")) {
                         State = 2;
-                        raycastHit.collider.gameObject.GetComponent<GoldMine>().SelectTurret();
+                        raycastHit.collider.gameObject.GetComponentInParent<GoldMine>().SelectTurret();
                         SetUpUI(raycastHit.collider.gameObject, 2);
                         UpgradeAnim.SetTrigger("Appear");
                         FindObjectOfType<UpgradeUILogic>().EnableUI();
@@ -73,6 +73,7 @@ public class SelectObj : MonoBehaviour
                     else {
                         if (UpgradeUI) {
                             UpgradeAnim.SetTrigger("Disappear");
+                            print("Disapear");
                             FindObjectOfType<UpgradeUILogic>().isActive = false;
                             UpgradeUI = false;
                         }
@@ -88,6 +89,7 @@ public class SelectObj : MonoBehaviour
         }
         if (UpgradeUI) {
             UpgradeAnim.SetTrigger("Disappear");
+            print("Disapear1");
             FindObjectOfType<UpgradeUILogic>().isActive = false;
             UpgradeUI = false;
         }

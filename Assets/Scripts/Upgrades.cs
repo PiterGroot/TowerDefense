@@ -19,12 +19,8 @@ public class Upgrades : MonoBehaviour
                 turret = gameObject.GetComponent<Turret>();
                 break;
             case 1:
-                //aowturret
+                //aoeturret
                 AOWturret = gameObject.GetComponent<AOWTurret>();
-                break;
-            case 2:
-                //goldmine
-                Goldmine = gameObject.GetComponent<GoldMine>(); 
                 break;
         }
     }
@@ -34,7 +30,10 @@ public class Upgrades : MonoBehaviour
         FindObjectOfType<Wallet>().RemoveMoney(damagePrice);
         if(state == 0) {
             turret.damageAmount += 4;
-            turret.EnableScope();
+        }
+        else{
+            //increase aoe damage
+            AOWturret.damageAmount += 4;
         }
     }
     public void BuyFireRate() {
@@ -43,7 +42,10 @@ public class Upgrades : MonoBehaviour
         FindObjectOfType<Wallet>().RemoveMoney(fireRatePrice);
         if (state == 0) {
             turret.EnableScope();
-            turret.shootRate = 0.3f;
+            turret.shootRate = .3f;
+        }
+         else{
+            AOWturret.shootRate = .3f;
         }
     }
 }

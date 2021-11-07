@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1f446ffb545de40b1086f41ff094f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {fileID: 2100000, guid: 8a4474fdb14aca3498371c1daa2dc71d, type: 2}
+  startMaterial: {fileID: 0}
   white: {fileID: 2100000, guid: 9e854de6640164a4ca704a570d400972, type: 2}
-  Health_: 2
+  Health_: 10
 --- !u!114 &2522800473539941042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AOWDamage: 0
-  AOWDamageAmount: 3
   Waypoints: []
   moveSpeed: 7
   moveSpeed1: 100

@@ -571,6 +571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snow_detail_rocksLarge (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4078021260290341684, guid: de39879758f133748985669a9e9b062d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a4474fdb14aca3498371c1daa2dc71d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de39879758f133748985669a9e9b062d, type: 3}
 --- !u!4 &8340115482403755803 stripped

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
+    [HideInInspector] public Camera cam;
     [HideInInspector]public bool isAttatched;
     [SerializeField] private Vector3 Spawnpos;
     [SerializeField] private ParticleSystem explosion;
@@ -17,6 +18,7 @@ public class Crate : MonoBehaviour
         canAttatch = true;
     }
     public void Attatch(Transform transform) {
+        cam = FindObjectOfType<DroneController>().gameObject.GetComponent<Camera>();
         if (canAttatch) {
             canAttatch = false;
             FindObjectOfType<AudioManager>().Play("Crate");
@@ -30,7 +32,7 @@ public class Crate : MonoBehaviour
         Invoke("DetachingUI", 0.5f);
         canAttatch = false;
         isAttatched = false;
-        rb.velocity = new Vector3(0, -30, 0);
+        rb.velocity = new Vector3(0, -10, 0);
         Invoke("CanAttach", .75f);
     }
     private void DetachingUI(){
@@ -50,6 +52,21 @@ public class Crate : MonoBehaviour
             FindObjectOfType<Rope>().isEmpty = true;
             FindObjectOfType<Rope>().isDetaching = true;
             FindObjectOfType<Rope>().isGrappled = false;
+            int randint = Random.Range(1, 5);
+            switch(randint){
+                case 1:
+                FindObjectOfType<Wallet>().AddMoney(100);
+                break;
+                case 2:
+                FindObjectOfType<Wallet>().RemoveMoney(100);
+                break;
+                case 3:
+                FindObjectOfType<PlayerHealth>().AddHealth(25);
+                break;
+                case 4:
+                FindObjectOfType<PlayerHealth>().RemoveHealth(40);
+                break;
+            }
             Destroy(gameObject);
         } 
     }
