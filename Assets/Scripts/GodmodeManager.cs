@@ -22,8 +22,8 @@ public class GodmodeManager : MonoBehaviour
                     isGodmode = true;
                     GodAnim.gameObject.SetActive(true);
                     PlayerPrefs.SetInt("DroneBoost", 500);
-                    FindObjectOfType<Wallet>().SetMoney(1000000);
-                    FindObjectOfType<PlayerHealth>().SetHealth(1000000);
+                    FindObjectOfType<Wallet>().SetMoney(5000);
+                    FindObjectOfType<PlayerHealth>().SetHealth(500);
                 }
                 if(state == 2) {
                     state = 0;

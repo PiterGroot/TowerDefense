@@ -55,7 +55,7 @@ public class Crate : MonoBehaviour
             int randint = Random.Range(1, 5);
             switch(randint){
                 case 1:
-                FindObjectOfType<Wallet>().AddMoney(100);
+                FindObjectOfType<Wallet>().AddMoney(200);
                 break;
                 case 2:
                 FindObjectOfType<Wallet>().RemoveMoney(100);
@@ -64,7 +64,7 @@ public class Crate : MonoBehaviour
                 FindObjectOfType<PlayerHealth>().AddHealth(25);
                 break;
                 case 4:
-                FindObjectOfType<PlayerHealth>().RemoveHealth(40);
+                FindObjectOfType<PlayerHealth>().RemoveHealth(25);
                 break;
             }
             Destroy(gameObject);

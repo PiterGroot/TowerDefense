@@ -29,7 +29,7 @@ public class PauseManager : MonoBehaviour
             case 1:
                 PauseScreen.SetActive(true);
                 Cursor.visible = true;
-                FindObjectOfType<AudioManager>().Stop("Drone");
+                FindObjectOfType<Building>().canBuild = false;
                 break;
             case 2:
                 PauseScreen.SetActive(false);
