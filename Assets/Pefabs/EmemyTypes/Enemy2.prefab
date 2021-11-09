@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49d9d51746642654e90c36bee7131348, type: 2}
+  - {fileID: 2100000, guid: 624b24e3d18d3ad4e9ea102f7c356338, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMaterial: {fileID: 0}
   white: {fileID: 2100000, guid: 9e854de6640164a4ca704a570d400972, type: 2}
-  Health_: 15
+  Health_: 30
 --- !u!114 &2522800473539941042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AOWDamage: 0
   Waypoints: []
-  moveSpeed: 11
+  moveSpeed: 15
   moveSpeed1: 100
   CurrentWayPoint: {fileID: 0}
   WaypointCounter: 0

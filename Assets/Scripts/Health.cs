@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     }
     private void UpdateHealth() {
         if(Health_ <= 0) {
-            FindObjectOfType<Wallet>().AddMoney(Random.Range(1, 6));
+            FindObjectOfType<Wallet>().AddMoney(Random.Range(3, 11));
             Destroy(gameObject);
         }
     }

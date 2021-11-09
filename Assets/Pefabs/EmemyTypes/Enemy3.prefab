@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMaterial: {fileID: 0}
   white: {fileID: 2100000, guid: 9e854de6640164a4ca704a570d400972, type: 2}
-  Health_: 25
+  Health_: 40
 --- !u!114 &2522800473539941042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AOWDamage: 0
   Waypoints: []
-  moveSpeed: 15
+  moveSpeed: 20
   moveSpeed1: 100
   CurrentWayPoint: {fileID: 0}
   WaypointCounter: 0
